@@ -29,5 +29,8 @@ bins = [0,3,10,20,30,50,75,100,150,1000]
 labels = [1,2,3,4,5,6,7,8,9]
 df['AGE OF BUILDING'] = pd.cut(df['AGE OF BUILDING'], bins=bins, labels=labels, right=True)
 df = pd.get_dummies(df, columns=['AGE OF BUILDING'])
+df.columns = [col.replace('BUILDING CLASS CATEGORY_', '') for col in df.columns]
+df.columns = [col.replace('ZIP CODE_', '') for col in df.columns]
+df.columns = [col.replace('.0', '') for col in df.columns]
 
 df.to_csv(r'cleaned_data.csv', index=False)

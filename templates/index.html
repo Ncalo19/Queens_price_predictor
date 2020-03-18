@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>NYC Rent Price Estimator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class = "login">
+            <form action = "{{ url_for('predict')}}"method="post">
+                <pre class="tab">
+
+                                 Residential_Units: <input type="text" name="Residential_Units" id="Residential_Units" required>
+                                  Commercial_Units: <input type="text" name="Commercial_Units" id="Commercial_Units" required>
+                                        Gross_sqft: <input type="text" name="Gross_sqft" id="Gross_sqft" required>
+                                          Zip_Code: <select type="text" name="Zip_Code" id="Zip_Code" required>
+                                                        <option disabled selected value> -- select an option -- </option>
+                                                        <option>10128</option>
+                                                        <option>11001</option>
+                                                        <option>11004</option>
+                                                        <option>11040</option>
+                                                        <option>11101</option>
+                                                        <option>11102</option>
+                                                        <option>11103</option>
+                                                        <option>11104</option>
+                                                        <option>11105</option>
+                                                        <option>11106</option>
+                                                        <option>11109</option>
+                                                        <option>11351</option>
+                                                        <option>11354</option>
+                                                        <option>11355</option>
+                                                        <option>11356</option>
+                                                        <option>11357</option>
+                                                        <option>11358</option>
+                                                        <option>11360</option>
+                                                        <option>11361</option>
+                                                        <option>11362</option>
+                                                        <option>11363</option>
+                                                        <option>11364</option>
+                                                        <option>11365</option>
+                                                        <option>11366</option>
+                                                        <option>11367</option>
+                                                        <option>11368</option>
+                                                        <option>11369</option>
+                                                        <option>11370</option>
+                                                        <option>11372</option>
+                                                        <option>11373</option>
+                                                        <option>11374</option>
+                                                        <option>11375</option>
+                                                        <option>11377</option>
+                                                        <option>11378</option>
+                                                        <option>11379</option>
+                                                        <option>11385</option>
+                                                        <option>11411</option>
+                                                        <option>11412</option>
+                                                        <option>11413</option>
+                                                        <option>11414</option>
+                                                        <option>11415</option>
+                                                        <option>11416</option>
+                                                        <option>11417</option>
+                                                        <option>11418</option>
+                                                        <option>11419</option>
+                                                        <option>11420</option>
+                                                        <option>11421</option>
+                                                        <option>11422</option>
+                                                        <option>11423</option>
+                                                        <option>11426</option>
+                                                        <option>11427</option>
+                                                        <option>11428</option>
+                                                        <option>11429</option>
+                                                        <option>11432</option>
+                                                        <option>11433</option>
+                                                        <option>11434</option>
+                                                        <option>11435</option>
+                                                        <option>11436</option>
+                                                        <option>11691</option>
+                                                        <option>11692</option>
+                                                        <option>11693</option>
+                                                        <option>11694</option>
+                                                    </select>
+                                    Class Category: <select type="text" name="Class_Category" id="Class_Category" required>
+                                                         <option disabled selected value> -- select an option -- </option>
+                                                         <option>01 ONE FAMILY DWELLINGS</option>
+                                                         <option>02 TWO FAMILY DWELLINGS</option>
+                                                         <option>04 TAX CLASS 1 CONDOS</option>
+                                                         <option>05 TAX CLASS 1 VACANT LAND</option>
+                                                         <option>06 TAX CLASS 1 - OTHER</option>
+                                                         <option>12 CONDOS - WALKUP APARTMENTS</option>
+                                                         <option>13 CONDOS - ELEVATOR APARTMENTS</option>
+                                                         <option>15 CONDOS - 2-10 UNIT RESIDENTIAL</option>
+                                                         <option>16 CONDOS - 2-10 UNIT WITH COMMERCIAL UNIT</option>
+                                                         <option>29 COMMERCIAL GARAGES</option>
+                                                         <option>30 WAREHOUSES</option>
+                                                         <option>31 COMMERCIAL VACANT LAND</option>
+                                                         <option>41 TAX CLASS 4 - OTHER</option>
+                                                    </select>
+                                        Year_Built: <input type="text" name="Year_Built" id="Year_Built" required>
+                                                   <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+            </form>
+                                              {{prediction_text}} <!--jinja2-->
+        </div>
+    </body>
+</html>

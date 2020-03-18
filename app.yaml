@@ -1,1 +1,6 @@
 #for hosting on gcloud
+entrypoint: "gunicorn -b:$PORT Queens_apartment_flask:app"
+env: flex
+runtime: python
+runtime_config:
+    python_version: 3
