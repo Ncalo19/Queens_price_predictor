@@ -25,5 +25,9 @@ df['YEAR BUILT'] = (datetime.datetime.now().year - df['YEAR BUILT'])
 df = df.rename(columns = {'YEAR BUILT' : 'AGE OF BUILDING'})
 df_SALEPRICE = df.pop('SALE PRICE') #move sale price to the last column
 df['SALE PRICE']=df_SALEPRICE
+bins = [0,3,10,20,30,50,75,100,150,1000]
+labels = [1,2,3,4,5,6,7,8,9]
+df['AGE OF BUILDING'] = pd.cut(df['AGE OF BUILDING'], bins=bins, labels=labels, right=True)
+df = pd.get_dummies(df, columns=['AGE OF BUILDING'])
 
 df.to_csv(r'cleaned_data.csv', index=False)
